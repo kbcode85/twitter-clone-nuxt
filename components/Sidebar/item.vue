@@ -5,16 +5,18 @@ const props = defineProps({
   active: {
     type: Boolean,
     default: false
+  },
+  to: {
+    type: String,
+    required: true
   }
 })
 
-const textClasses = computed(() => {
-  return props.active ? 'text-medium' : 'text-normal'
-})
+const textClasses = computed(() => props.active ? 'font-semibold' : 'font-normal')
 </script>
 
 <template>
-  <nuxt-link to="#"
+  <nuxt-link :to="props.to"
              class="flex items-center p-3 text-black rounded-full w-min hover:bg-gray-200 dark:hover:bg-dim-200 dark:text-white"
              :class="defaultTransition">
 

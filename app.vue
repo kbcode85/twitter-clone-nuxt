@@ -2,24 +2,10 @@
   <div :class="{ 'dark': darkMode }">
     <div class="bg-white dark:bg-dim-900">
 
-      <!-- App -->
-      <div class="min-h-full">
-        <div class="grid grid-cols-12 mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:gap-5">
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
 
-          <!-- Left sidebar -->
-          <div class="hidden md:block xs-col-span-1 xl:col-span-2">
-            <div class="sticky top-0">
-              <SidebarLeft />
-            </div>
-          </div>
-
-          <!-- Main content -->
-
-          <!-- Right Sidebar -->
-
-
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -27,3 +13,11 @@
 <script setup lang="ts">
 const darkMode = ref(false)
 </script>
+
+<style scoped>
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
